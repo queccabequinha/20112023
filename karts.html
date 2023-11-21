@@ -1,0 +1,198 @@
+<DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+         function final() {
+
+var vet = []
+
+for (c = 1; c <= 10; c++) {
+    vet[c - 1] = (Number(document.querySelector(`#p${c}v1`).value) + Number(document.querySelector(`#p${c}v2`).value) + Number(document.querySelector(`#p${c}v3`).value)) / 3
+}
+
+var mtempo = 0
+var mcarro
+
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo) {
+        mcarro = c
+        mtempo = vet[c]
+    }
+}
+
+var mtempo2 = 0
+var mcarro2 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo2 && c != mcarro) {
+        mcarro2 = c
+        mtempo2 = vet[c]
+    }
+}
+
+var mtempo3 = 0
+var mcarro3 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo3 && c != mcarro && c != mcarro2) {
+        mcarro3 = c
+        mtempo3 = vet[c]
+    }
+}
+
+var mtempo4 = 0
+var mcarro4 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo4 && c != mcarro && c != mcarro2 && c != mcarro3) {
+        mcarro4 = c
+        mtempo4 = vet[c]
+    }
+}
+
+var mtempo5 = 0
+var mcarro5 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo5 && c != mcarro && c != mcarro2 && c != mcarro3 && c != mcarro4) {
+        mcarro5 = c
+        mtempo5 = vet[c]
+    }
+}
+
+var mtempo6 = 0
+var mcarro6 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo6 && c != mcarro && c != mcarro2 && c != mcarro3 && c != mcarro4 && c != mcarro5) {
+        mcarro6 = c
+        mtempo6 = vet[c]
+    }
+}
+
+var mtempo7 = 0
+var mcarro7 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo7 && c != mcarro && c != mcarro2 && c != mcarro3 && c != mcarro4 && c != mcarro5 && c != mcarro6) {
+        mcarro7 = c
+        mtempo7 = vet[c]
+    }
+}
+
+var mtempo8 = 0
+var mcarro8 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo8 && c != mcarro && c != mcarro2 && c != mcarro3 && c != mcarro4 && c != mcarro5 && c != mcarro6 && c != mcarro7) {
+        mcarro8 = c
+        mtempo8 = vet[c]
+    }
+}
+
+var mtempo9 = 0
+var mcarro9 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo9 && c != mcarro && c != mcarro2 && c != mcarro3 && c != mcarro4 && c != mcarro5 && c != mcarro6 && c != mcarro7 && c != mcarro8) {
+        mcarro9 = c
+        mtempo9 = vet[c]
+    }
+}
+
+var mtempo10 = 0
+var mcarro10 = 0
+
+for (c = 0; c < 10; c++) {
+    if (vet[c] > mtempo10 && c != mcarro && c != mcarro2 && c != mcarro3 && c != mcarro4 && c != mcarro5 && c != mcarro6 && c != mcarro7 && c != mcarro8 && c != mcarro9) {
+        mcarro10 = c
+        mtempo10 = vet[c]
+    }
+}
+
+var vr = Infinity;
+var vrp = "";
+var vl = 0;
+var vlp = "";
+
+for (c = 1; c <= 10; c++) {
+    for (v = 1; v <= 3; v++) {
+        var tempoVolta = Number(document.getElementById(`p${c}v${v}`).value);
+
+        if (tempoVolta < vr) {
+            vr = tempoVolta;
+            vrp = document.getElementById(`p${c}`).value;
+        }
+
+        if (tempoVolta > vl) {
+            vl = tempoVolta;
+            vlp = document.getElementById(`p${c}`).value;
+        }
+    }
+}
+
+nomes = [
+document.getElementById(`p${mcarro10 + 1}`).value,
+document.getElementById(`p${mcarro9 + 1}`).value,
+document.getElementById(`p${mcarro8 + 1}`).value,
+document.getElementById(`p${mcarro7 + 1}`).value,
+document.getElementById(`p${mcarro6 + 1}`).value,
+document.getElementById(`p${mcarro5 + 1}`).value,
+document.getElementById(`p${mcarro4 + 1}`).value,
+document.getElementById(`p${mcarro3 + 1}`).value,
+document.getElementById(`p${mcarro2 + 1}`).value,
+document.getElementById(`p${mcarro + 1}`).value
+]
+
+body.innerHTML += `
+<p>Largara em primeiro: ${nomes[0]}, tempo médio: ${mtempo10}</p>
+<p>Largara em ultimo: ${nomes[9]}, tempo médio: ${mtempo}</p>
+
+<p>Volta mais rápida: ${vrp} com um tempo de ${vr}<p>
+<p>Volta mais lenta: ${vlp} com um tempo de ${vl}<p>
+`
+
+body.innerHTML += "<h3>Grid</h3>"
+
+body.innerHTML += `
+<p>1°| Kart ${mcarro10 + 1} | Piloto: ${nomes[0]}</p>
+<p>2°| Kart ${mcarro9 + 1} | Piloto: ${nomes[1]}</p>
+<p>3°| Kart ${mcarro8 + 1} | Piloto: ${nomes[2]}</p>
+<p>4°| Kart ${mcarro7 + 1} | Piloto: ${nomes[3]}</p>
+<p>5°| Kart ${mcarro6 + 1} | Piloto: ${nomes[4]}</p>
+<p>6°| Kart ${mcarro5 + 1} | Piloto: ${nomes[5]}</p>
+<p>7°| Kart ${mcarro4 + 1} | Piloto: ${nomes[6]}</p>
+<p>8°| Kart ${mcarro3 + 1} | Piloto: ${nomes[7]}</p>
+<p>9°| Kart ${mcarro2 + 1} | Piloto: ${nomes[8]}</p>
+<p>10°| Kart ${mcarro + 1} | Piloto: ${nomes[9]}</p>
+`
+}
+    </script>
+
+</head>
+
+<body>
+    <h1>Corrida de Kart</h1>
+
+    <script>
+        var body = document.querySelector("body")
+
+
+        for (c = 1; c <= 10; c++) {
+            body.innerHTML += `<p class='sla'><h3>Kart ${c}: </h3> Piloto:<input type="text" id="p${c}"> 1°volta: <input type="number" id="p${c}v1"> 2°volta: <input type="number" id="p${c}v2">3°volta: <input type="number" id="p${c}v3"></p>`
+        }
+
+        body.innerHTML += "<button onclick='final()'>Ver resultado</button>"
+       
+    </script>
+
+</body>
+
+</html>

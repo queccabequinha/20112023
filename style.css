@@ -1,0 +1,14 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-image: url("imagem1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sla{
+    margin: auto;
+}
